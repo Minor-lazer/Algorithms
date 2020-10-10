@@ -1,8 +1,5 @@
 
-edit
-play_arrow
 
-brightness_4
 /* C++ implementation of QuickSort */
 #include <bits/stdc++.h> 
 using namespace std;  
@@ -77,4 +74,3 @@ int main()
     return 0;  
 }  
 
-//contributed by saurabh negi
