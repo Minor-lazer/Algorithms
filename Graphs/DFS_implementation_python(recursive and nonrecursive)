@@ -1,0 +1,43 @@
+
+#dfs for directed graph
+adj_list={
+'A' : ['B','S'],
+    'B' : ['A'],
+    'C' : ['D','E','F','S'],
+    'D' : ['C'],
+    'E' : ['C','H'],
+    'F' : ['C','G'],
+    'G' : ['F','S'],
+    'H' : ['E','G'],
+    'S' :['A','C','G']
+}
+
+def dfs(graph, node, visited):
+    if node not in visited:
+        visited.append(node)
+        for n in graph[node]:
+            dfs(graph,n, visited)
+    return visited
+
+visited = dfs(adj_list,'A', [])
+print(visited)
+
+#dfs non recursive
+
+def dfs(graph,start):
+    visit=set()
+    treversed=[]
+    stack=[start]
+    while stack:
+        vertex=stack.pop()
+        if vertex not in visit:
+            visit.add(vertex)
+            treversed.append(vertex)
+            stack.extend(reversed(graph[vertex]))
+            print(stack)
+    print(visit)
+    return treversed
+print(dfs(adj_list,'A'))
+
+
+
