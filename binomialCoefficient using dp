@@ -1,0 +1,30 @@
+//Write a program of BinomialCoefficient using Dynamic Programming
+//package practice;
+public class bcdp 
+{
+    static int minimum(int a, int b) 
+    { 
+        return (a<b)? a: b;  
+    }    
+    static int binomialCoefficient(int n, int k) 
+    { 
+    int C[][] = new int[n+1][k+1]; 
+    int i, j; 
+    for (i = 0; i <= n; i++) 
+    { 
+        for (j = 0; j <= minimum(i, k); j++) 
+        { 
+            if (j == 0 || j == i) 
+                C[i][j] = 1; 
+            else
+                C[i][j] = C[i-1][j-1] + C[i-1][j]; 
+          } 
+     } 
+    return C[n][k]; 
+    } 
+    public static void main(String[] args)
+    {
+        int n = 5, k = 1; 
+        System.out.println("Value of C("+n+","+k+") is "+binomialCoefficient(n, k));  
+    } 
+}
