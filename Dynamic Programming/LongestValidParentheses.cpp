@@ -3,7 +3,7 @@
 *Problem Link : https://leetcode.com/problems/longest-valid-parentheses/submissions/
 *Platform: leetcode
 *Status: correct
-*Author: Mayukh Chakrabarti
+*Author: Mayukh Chakrabarti (https://github.com/MayukhC99)
 *
 */
 
