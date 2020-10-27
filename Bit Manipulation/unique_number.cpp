@@ -1,7 +1,7 @@
 //Program to find unique number in an array
 #include <iostream>
 using namespace std;
-
+//Function to find unique number.
 int unique(int *arr,int n)
 {
 	int count[64]={0};
