@@ -2,7 +2,6 @@
 #include <iostream> 
 using namespace std; 
 
-// Stack is represented using linked list 
 struct stack { 
 	int data; 
 	struct stack* next; 
