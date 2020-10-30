@@ -1,4 +1,5 @@
 //Program to find unique number in an array
+//Program to find unique number.
 #include <iostream>
 using namespace std;
 //Function to find unique number.
