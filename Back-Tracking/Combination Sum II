@@ -1,0 +1,35 @@
+class Solution {
+public:
+    void recursion(int idx,vector<int>&candidates,map<vector<int>,int>&mp,vector<int>&v,int target,int& sum) {
+        if(sum == target) {
+            mp[v]++;
+            return;
+        }
+        for(int i = idx; i < candidates.size();++i){
+            if(sum + candidates[i] <= target){
+                sum += candidates[i];
+                v.push_back(candidates[i]);
+            } else
+                continue;
+            recursion(i+1,candidates,mp,v,target,sum);
+            v.pop_back();
+            sum -= candidates[i];
+            while(i+1 < candidates.size() and candidates[i] == candidates[i+1]){
+                i++;
+            }
+        }
+    }
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        sort(candidates.begin(),candidates.end());
+        vector<vector<int>> ans;
+        map<vector<int>,int> mp;
+        vector<int> v;
+        int sum = 0;
+        recursion(0,candidates,mp,v,target,sum);
+        for(auto m:mp){
+            ans.push_back(m.first);
+        }
+        return ans;
+        
+    }
+};
